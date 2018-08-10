@@ -36,4 +36,26 @@ tm_shape(countries_spdf) +
   tm_borders(col = "burlywood4")
 
 
+# Switch to a Hobo–Dyer projection
+tm_shape(countries_spdf,
+         projection = "hd") +
+  tm_grid(n.x = 11, n.y = 11) +
+  tm_fill(col = "population", style = "quantile")  +
+  tm_borders(col = "burlywood4") 
+
+# Switch to a Robinson projection
+tm_shape(countries_spdf,
+         projection = "robin") +
+  tm_grid(n.x = 11, n.y = 11) +
+  tm_fill(col = "population", style = "quantile")  +
+  tm_borders(col = "burlywood4") 
+
+# Add tm_style_classic() to your plot
+tm_shape(countries_spdf,
+         projection = "robin") +
+  tm_grid(n.x = 11, n.y = 11) +
+  tm_fill(col = "population", style = "quantile")  +
+  tm_borders(col = "burlywood4") +
+  tm_style_classic()
+
 
